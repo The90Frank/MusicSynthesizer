@@ -1,0 +1,85 @@
+/*
+***********************
+* Francesco Vatteroni *
+*  Matricola: 468134  *
+*        UniPi        *
+***********************
+*/
+
+@font-face {
+    font-family: 'Gtek'; /*a name to be used later*/
+    src: url('src/fonts/Gtek.ttf'); /*URL to font*/
+}
+
+h1 {
+    padding-top: 15px;
+    font-family: 'Gtek';
+    font-size: xx-large;
+}
+
+button {
+    width: 20%;
+    height: 50px;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 0px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+button.play {background-color: #3cba54;}
+button.edit {background-color: #4885ed;}
+
+.speed {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    width: 20%; /* Full-width */
+    border-radius: 4px;
+    height: 50px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+.speed::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 20px; /* Set a specific slider handle width */
+    height: 20px; /* Slider handle height */
+    border-radius: 50%;
+    background: #f4c20d; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+.speed::-moz-range-thumb {
+    width: 20px; /* Set a specific slider handle width */
+    height: 20px; /* Slider handle height */
+    border-radius: 50%;
+    background: #f4c20d; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+select {
+    width: 20%;
+    height: 50px;
+    padding: 16px 20px;
+    position: relative;
+    top: -18px;
+    border: none;
+    border-radius: 4px;
+    background-color: #F4800d;
+}
+
+* { margin:0; padding:0; } /* to remove the top and left whitespace */
+
+html, body { width:100%; height:100%; } /* just to be sure these are full screen*/
+
+canvas { display:block;}

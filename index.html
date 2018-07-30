@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <!--
+        ***********************
+        * Francesco Vatteroni *
+        *  Matricola: 468134  *
+        *        UniPi        *
+        ***********************
+        -->
+        <meta charset="UTF-8"> 
+        <link rel="stylesheet" target="_blank" href="style.css" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>FrankMusic</title>
+    </head>
+    <body onload = init();>
+        <center>
+                <h1>frank music</h1>
+            </br>
+                <canvas id="MusicCanvas"></canvas>
+            </br>
+                <button id="PlayStop" type="button" class="play"><i class="fa fa-play"></i></button>
+                <button id="Edit" type="button" class="edit"><i class="fa fa-pencil"></i></button>
+            </br>
+                <input id="Speed" type="range" class="speed" min="0" max="200" value="100">
+                <select id="SetInstrument">
+                    <option value="FoleyPerc">FoleyPerc</option>
+                    <option value="Mainroom">Mainroom</option>
+                    <option value="Minimal">Minimal</option>
+                    <option value="Neuro">Neuro</option>
+                </select>
+        </center>
+        <script src="music.js"></script>
+    </body>
+</html>
