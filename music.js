@@ -133,6 +133,9 @@ function onTick() {
     statereproduction = (statereproduction+1)%slotx;
     
     for (var i = 0; i < sloty; i++) {
+
+        /*audio[i].pause();*/
+
         if(matrix[statereproduction][i]){
             reproduce(audio[i]);
         }
@@ -211,7 +214,7 @@ function init(){
 
     state = false;
     slotx = 32;
-    sloty = 16;
+    sloty = 13;
 
     var BottonPlayStop = document.getElementById('PlayStop');
     BottonPlayStop.onclick = function() {
