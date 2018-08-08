@@ -222,7 +222,6 @@ function init(){
     ctx = canvas.getContext('2d');
 
     state = false;
-    conti = true;
     slotx = 32;
     sloty = 13;
 
@@ -263,8 +262,9 @@ function init(){
 
     var CheckBox = document.getElementById("continued");
     CheckBox.onclick = function() {
-        conti = !conti;
+        conti = CheckBox.checked;
     }
+    conti = CheckBox.checked;
 
     matrix = new Array(slotx);
     for (var i = 0; i < slotx; i++) {
