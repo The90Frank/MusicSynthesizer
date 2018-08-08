@@ -15,6 +15,7 @@ var sloty;
 var sizeh;
 var sizew;
 var audio;
+var conti;
 var matrix;
 var canvas;
 var auxtimer;
@@ -141,7 +142,8 @@ function onTick() {
     
     for (var i = 0; i < sloty; i++) {
 
-        /*audio[i].pause();*/
+        if (conti)
+            audio[i].pause();
 
         if(matrix[statereproduction][i]){
             reproduce(audio[i]);
@@ -220,6 +222,7 @@ function init(){
     ctx = canvas.getContext('2d');
 
     state = false;
+    conti = true;
     slotx = 32;
     sloty = 13;
 
@@ -237,11 +240,13 @@ function init(){
 
     var BottonEdit = document.getElementById('Edit');
     BottonEdit.onclick = function() {
-        if (!mode)
+        if (!mode){
             BottonEdit.innerHTML = iconpencil;
-        else
+            BottonEdit.style.background = '#4885ed';
+        } else {
             BottonEdit.innerHTML = iconeraser;
-
+            BottonEdit.style.background = '#8548ed';
+        }
         AddRemove();
     }
 
@@ -254,6 +259,11 @@ function init(){
     SetInstrument.onchange = function() {
         blockoldaudio();
         newSetInstrument(SetInstrument.value);
+    }
+
+    var CheckBox = document.getElementById("continued");
+    CheckBox.onclick = function() {
+        conti = !conti;
     }
 
     matrix = new Array(slotx);

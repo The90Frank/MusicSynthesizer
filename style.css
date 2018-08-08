@@ -7,8 +7,8 @@
 */
 
 @font-face {
-    font-family: 'Gtek'; /*a name to be used later*/
-    src: url('src/fonts/Gtek.ttf'); /*URL to font*/
+    font-family: 'Gtek';
+    src: url('src/fonts/Gtek.ttf');
 }
 
 h1 {
@@ -27,44 +27,46 @@ button {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
     margin: 4px 0px;
     cursor: pointer;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
+    position: relative;
+    top: -17px;
 }
 
 button.play {background-color: #3cba54;}
 button.edit {background-color: #4885ed;}
 
 .speed {
-    -webkit-appearance: none;  /* Override default CSS styles */
-    width: 20%; /* Full-width */
+    -webkit-appearance: none;
+    width: 20%; 
     border-radius: 4px;
-    height: 50px; /* Specified height */
-    background: #d3d3d3; /* Grey background */
-    outline: none; /* Remove outline */
-    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    height: 50px; 
+    background: #d3d3d3; 
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
     transition: opacity .2s;
 }
 
 .speed::-webkit-slider-thumb {
-    -webkit-appearance: none; /* Override default look */
+    -webkit-appearance: none;
     appearance: none;
-    width: 20px; /* Set a specific slider handle width */
-    height: 20px; /* Slider handle height */
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    background: #f4c20d; /* Green background */
-    cursor: pointer; /* Cursor on hover */
+    background: #f4c20d;
+    cursor: pointer;
 }
 
 .speed::-moz-range-thumb {
-    width: 20px; /* Set a specific slider handle width */
-    height: 20px; /* Slider handle height */
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    background: #f4c20d; /* Green background */
-    cursor: pointer; /* Cursor on hover */
+    background: #f4c20d;
+    cursor: pointer;
 }
 
 select {
@@ -72,7 +74,7 @@ select {
     height: 50px;
     padding: 16px 20px;
     position: relative;
-    top: -18px;
+    top: -19px;
     border: none;
     border-radius: 4px;
     background-color: #F4800d;
@@ -83,3 +85,72 @@ select {
 html, body { width:100%; height:100%; } /* just to be sure these are full screen*/
 
 canvas { display:block;}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    top: -14px;
+    left: -14px;
+    width: 50px;
+    height: 25px;
+  }
+  
+  .switch input {display:none;}
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    -ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Safari */
+    transform: rotate(-90deg);
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 19px;
+    width: 19px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #c20df4;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #c20df4;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(25px);
+    -ms-transform: translateX(25px);
+    transform: translateX(25px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 4px;
+  }
+  
+  .slider.round:before {
+    border-radius: 4px;
+  }
+
+  .toolbar {
+    position: relative;
+    width: 90%;
+    top: 0px;
+    left: 15px;
+  }
