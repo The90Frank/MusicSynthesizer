@@ -33,7 +33,9 @@ var statereproduction;
 
 function dec2hex (x) {
     var d = parseInt(x);
-    if (d > 15)
+    if (d > 255)
+        return "FF";
+    else if (d > 15)
         return d.toString(16);
     else
         return "0" + d.toString(16);
@@ -88,14 +90,19 @@ function drawRectOn(ctx,x,y,w,h,i,j){
     ctx.fillRect(x,y,w,h);
 
     var rgb = calculateColor(j,i);
+    var color = "#" + dec2hex(rgb[0]) + dec2hex(rgb[1]) + dec2hex(rgb[2]);
 
     if (state && (i == statereproduction)){
-        var color = "#" + dec2hex(rgb[0]+25) + dec2hex(rgb[1]+25) + dec2hex(rgb[2]+25);
-        ctx.fillStyle=color;
+        var grd = ctx.createRadialGradient(x+(w/2),y+(h/2),0,x+(w/2),y+(h/2),Math.min(w,h)/2);
+        color = "#" + dec2hex(rgb[0]+25) + dec2hex(rgb[1]+25) + dec2hex(rgb[2]+25);
+        grd.addColorStop(1, color);
+        color = "#" + dec2hex(rgb[0]+150) + dec2hex(rgb[1]+150) + dec2hex(rgb[2]+150);
+        grd.addColorStop(0, color);
+        ctx.fillStyle = grd;
     } else {
-        var color = "#" + dec2hex(rgb[0]) + dec2hex(rgb[1]) + dec2hex(rgb[2]);
         ctx.fillStyle=color;
     }
+    
     ctx.fillRect(x+1,y+1,w-2,h-2);
 }
 
@@ -269,12 +276,13 @@ function init(){
     iconplay = '<i class="fa fa-play"></i>';
     iconeraser = '<i class="fa fa-eraser"></i>';
     iconstop = '<i class="fa fa-stop"></i>';
-    colortopleft = [230,0,0];
-    colortopright = [0,230,0];
-    colortopmiddle = [0,230,230];
-    colorbottommiddle = [0,0,230];
-    colorbottomleft = [230,230,0];
-    colorbottomright = [230,0,230];
+    
+    colortopleft = [0,240,240];
+    colortopmiddle = [0,240,0];
+    colortopright = [240,240,0];
+    colorbottomleft = [0,0,240];
+    colorbottommiddle = [240,0,240];
+    colorbottomright = [240,0,0];
 
     window.addEventListener('resize', onResize, true);
 
