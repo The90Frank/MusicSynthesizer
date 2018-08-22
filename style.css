@@ -105,7 +105,7 @@ canvas { display:block;}
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: #f27dff;
     -webkit-transition: .4s;
     transition: .4s;
     -ms-transform: rotate(-90deg); /* IE 9 */
@@ -126,11 +126,11 @@ canvas { display:block;}
   }
   
   input:checked + .slider {
-    background-color: #c20df4;
+    background-color:#e22dff;
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #c20df4;
+    box-shadow: 0 0 1px #e22dff;
   }
   
   input:checked + .slider:before {
