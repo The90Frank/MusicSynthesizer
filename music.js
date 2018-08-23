@@ -153,6 +153,12 @@ function onTick() {
     onPaint();
 }
 
+function PlayNote(x){
+    audio[x].pause();
+    audio[x].currentTime = 0;
+    audio[x].play();
+}
+
 function blockoldaudio(){
     for (var i = 0; i < sloty; i++) {
         audio[i].pause();
@@ -189,8 +195,12 @@ function PressGrid(evt){
         var r = canvas.getBoundingClientRect();
         var x = parseInt((evt.clientX - r.left)/sizew);
         var y = parseInt((evt.clientY - r.top)/sizeh);
-        matrix[x][y]=mode;
-        onPaint();
+        if (x>=0 && y>=0 && x<slotx && y<sloty){
+            if (mode && !matrix[x][y])
+                PlayNote(y);
+            matrix[x][y]=mode;
+            onPaint();
+        }
     }
 }
 
