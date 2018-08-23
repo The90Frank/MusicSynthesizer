@@ -220,10 +220,11 @@ function PressToolBar(evt){
         interval = interval-25;
 }
 
-function newSetInstrument(x){
+async function newSetInstrument(x){
     for (var i = 0; i < sloty; i++) {
         audio[i] = document.createElement("audio");
         audio[i].src = "src/" + x + "/" + i + ".wav";
+        audio[i].rel = "preload";
     }
 }
 
