@@ -22,6 +22,7 @@ var auxtimer;
 var interval;
 var iconplay;
 var iconstop;
+var unitspeed;
 var iconpencil;
 var iconeraser;
 var colortopleft;
@@ -183,7 +184,7 @@ function AddRemove(){
 }
 
 function newSpeed(interv){
-    interval = 300-interv;
+    interval = unitspeed-interv;
         if(state){
             clearInterval(auxtimer);
             auxtimer = setInterval(onTick,interval);
@@ -235,6 +236,7 @@ function init(){
     state = false;
     slotx = 32;
     sloty = 13;
+    unitspeed = 1000;
 
     var BottonPlayStop = document.getElementById('PlayStop');
     BottonPlayStop.onclick = function() {
@@ -272,6 +274,7 @@ function init(){
     }
 
     var CheckBox = document.getElementById("continued");
+    CheckBox.checked = true;
     CheckBox.onclick = function() {
         conti = CheckBox.checked;
     }
@@ -291,7 +294,7 @@ function init(){
     DnD = false;
     mode = true;
     statereproduction = slotx-1;
-    interval = 300 - (SpeedBar.value);
+    interval = unitspeed - (SpeedBar.value);
     changespeed = false;
     iconpencil = '<i class="fa fa-pencil"></i>';
     iconplay = '<i class="fa fa-play"></i>';
