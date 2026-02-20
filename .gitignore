@@ -1,0 +1,14 @@
+# IDE and editor settings
+.vscode/
+.claude/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (if used)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
